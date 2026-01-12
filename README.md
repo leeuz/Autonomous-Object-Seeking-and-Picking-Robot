@@ -31,7 +31,6 @@ Students, home users, and workplaces often have small objects scattered on floor
 | **Gripper Actuator** | MG90S Micro Servo | Actuates the claw mechanism. |
 | **Object Sensor** | Adafruit VL6180X (ToF) | High-precision distance measurement for object detection. |
 | **Contact Sensor** | Force Sensitive Resistor (FSR) | Feedback loop to confirm object has been grabbed. |
-| **Power Source** | 4x AA Battery Pack (6V) | External power specifically for high-torque servos. |
 
 ### Torque Calculations & Physics
 Before manufacturing, I performed static torque calculations to ensure the MG996R servos (Stall Torque: ~9.4 kg-cm) could lift the arm assembly.
