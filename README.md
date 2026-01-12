@@ -192,7 +192,7 @@ I performed a static test to verify the accuracy of the ToF sensor before integr
 ## Credits & Resources
 
 * **Libraries:** Adafruit_VL6180X, Servo.h
-* **3D Models:** MG996R Servo model from GrabCAD
+* **3D Models:** [MG996R Servo model from GrabCAD](https://grabcad.com/library/mechanical-gripper-14)
 
 ---
 
