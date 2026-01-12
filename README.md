@@ -25,12 +25,17 @@ Students, home users, and workplaces often have small objects scattered on floor
 ### Sensor Selection
 
 **Adafruit VL6180X Time-of-Flight (ToF)**
-The [VL6180X ToF sensor](https://www.adafruit.com/product/3316) was selected over ultrasonic sensors (HC-SR04) because of its high precision at short ranges (0-100mm). Unlike ultrasonic sensors, which created significant noise and interference during testing, the ToF sensor uses laser technology to provide millimeter-level accuracy via I2C communication. This is critical for the "Approach" phase where the gripper must position itself perfectly around a small object.![Adafruit VL6180X Sensor](https://cdn-shop.adafruit.com/970x728/3316-10.jpg)
+The [VL6180X ToF sensor](https://www.adafruit.com/product/3316) was selected over ultrasonic sensors (HC-SR04) because of its high precision at short ranges (0-100mm). Unlike ultrasonic sensors, which created significant noise and interference during testing, the ToF sensor uses laser technology to provide millimeter-level accuracy via I2C communication. This is critical for the "Approach" phase where the gripper must position itself perfectly around a small object.
+![Adafruit VL6180X Sensor](https://cdn-shop.adafruit.com/970x728/3316-10.jpg)
 
 
 **Force Sensitive Resistor (FSR)**
 A strip-shaped FSR was selected to act as the tactile feedback system for the gripper. By placing this on the inner jaw of the claw, the robot can detect physical pressure. This allows the code to stop the servo motor the moment a firm grip is achieved, preventing the robot from crushing delicate objects or burning out the servo motor by stalling against a hard object.
-![Force Sensitive Resistor](https://m.media-amazon.com/images/I/41PG4jWzTGL._SX342_SY445_QL70_FMwebp_.jpg)
+<img 
+  src="https://m.media-amazon.com/images/I/41PG4jWzTGL._SX342_SY445_QL70_FMwebp_.jpg"
+  alt="Force Sensitive Resistor"
+  width="600"
+/>
 
 
 ### Actuator Selection
