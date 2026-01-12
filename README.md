@@ -1,20 +1,21 @@
 # Autonomous Object-Seeking and Picking Robot Arm
 
-**Name::** Yuji Lee  
-**Course:** Digital Electronics
-**Status:** Prototype Complete (Phase 1)  
+**Name:** Yuji Lee  
+**Class:** Engineering Design and Development (EDD)  
+**Status:** Prototype Complete (Phase 1)
 
-![Final Robot Arm Assembly](PLACE_MY_FINAL_ROBOT_PHOTO_HERE.jpg)
+![Final Robot Arm Assembly](PLACE_YOUR_FINAL_ROBOT_PHOTO_HERE.jpg)
+
 ## Project Overview
 
 ### Description
-The **Autonomous Object-Seeking and Picking Robot** is a self-navigating system designed to locate objects, avoid obstacles, and pick up items using a compact robotic arm. While standard robot vacuums are excellent for debris, they cannot handle larger 3D objects (toys, socks, small tools) scattered on floors. This project bridges that gap by integrating sensor-based detection with mechanical actuation.
+The Autonomous Object-Seeking and Picking Robot is a self-navigating system designed to locate objects, avoid obstacles, and pick up items using a compact robotic arm. While standard robot vacuums are excellent for debris, they cannot handle larger 3D objects (toys, socks, small tools) scattered on floors. This project bridges that gap by integrating sensor-based detection with mechanical actuation.
 
 ### Problem Statement
-> Students, home users, and workplaces often have small objects scattered on floors or surfaces, making cleanup time-consuming. Existing automated systems (robot vacuums) cannot detect or collect these items. There is a need for an autonomous robot that can detect objects, pick them up, and store them without human intervention.
+Students, home users, and workplaces often have small objects scattered on floors or surfaces, making cleanup time-consuming. Existing automated systems (robot vacuums) cannot detect or collect these items. There is a need for an autonomous robot that can detect objects, pick them up, and store them without human intervention.
 
 ### Target Audience
-* **Home Users:** Hands-free collection of small items (toys, clothes).
+* **Home Users:** Hands-free collection of small items.
 * **Labs/Offices:** Recovery of misplaced small tools or parts.
 
 ---
@@ -33,24 +34,25 @@ The **Autonomous Object-Seeking and Picking Robot** is a self-navigating system 
 | **Power Source** | 4x AA Battery Pack (6V) | External power specifically for high-torque servos. |
 
 ### Torque Calculations & Physics
-Before manufacturing, I performed static torque calculations to ensure the **MG996R servos** (Stall Torque: ~9.4 kg·cm) could lift the arm assembly.
+Before manufacturing, I performed static torque calculations to ensure the MG996R servos (Stall Torque: ~9.4 kg-cm) could lift the arm assembly.
 
-**Formula Used:** $\tau = F \times d$ (Torque = Force $\times$ Distance)
+**Formula Used:** Torque = Force x Distance
 
 **The Calculation:**
 * **Shoulder Segment:** 19cm length, ~28.5g mass.
 * **Elbow Segment:** 20cm length, ~30g mass.
 * **Shoulder Joint Requirement:** Supports shoulder segment + elbow servo + forearm + gripper.
-    * *Calculated Torque:* ~3.16 kg·cm.
-    * *Servo Capacity:* 9.4 kg·cm.
+    * Calculated Torque: ~3.16 kg-cm.
+    * Servo Capacity: 9.4 kg-cm.
     * **Safety Factor:** ~2.97 (Safe).
 
-![Torque Calculation Hand Notes](PLACE_IMAGE_OF_YOUR_CALCULATION_NOTES_HERE.jpg)
+![Torque Calculation Notes](PLACE_IMAGE_OF_YOUR_CALCULATION_NOTES_HERE.jpg)
+
 ---
 
 ## Design & Modeling (CAD)
 
-The mechanical structure was designed in **Autodesk Fusion 360**.
+The mechanical structure was designed in Autodesk Fusion 360.
 
 ### 1. The Base Design
 The base required a custom housing to stabilize the heavy MG996R servo while accommodating the Arduino Nano and wiring.
@@ -61,7 +63,7 @@ The base required a custom housing to stabilize the heavy MG996R servo while acc
 
 ### 2. The Gripper
 I adapted an open-source parallel gripper design to fit the MG90S servo.
-* **Modification:** I modified the jaw surface to house a **Force Sensitive Resistor (FSR)**. This allows the robot to "feel" when it has successfully gripped an object, preventing the motor from crushing delicate items or burning out.
+* **Modification:** I modified the jaw surface to house a Force Sensitive Resistor (FSR). This allows the robot to "feel" when it has successfully gripped an object, preventing the motor from crushing delicate items or burning out.
 
 ![Fusion 360 Gripper Render](PLACE_SCREENSHOT_OF_GRIPPER_CAD_HERE.png)
 
@@ -73,10 +75,11 @@ I adapted an open-source parallel gripper design to fit the MG90S servo.
 The system uses a mixed-voltage circuit. The logic level (Arduino) runs on 5V USB, while the inductive load (Servos) runs on an external 6V source.
 
 ![Final Wiring Diagram](PLACE_IMAGE_OF_WIRING_DIAGRAM_HERE.png)
-### Critical Challenge: The "Common Ground"
+
+### Critical Challenge: The Common Ground
 During the build, I encountered a major issue where the code uploaded successfully, but the servos refused to move.
 * **Diagnosis:** The external battery pack (6V) and the Arduino (USB) were on isolated circuits. The servo control wire (Signal) had no reference point.
-* **Solution:** I soldered a jumper wire connecting the **Battery Negative (-)** to the **Arduino GND**. This completed the circuit and allowed the servos to interpret the PWM signals.
+* **Solution:** I soldered a jumper wire connecting the Battery Negative (-) to the Arduino GND. This completed the circuit and allowed the servos to interpret the PWM signals.
 
 ---
 
@@ -84,16 +87,16 @@ During the build, I encountered a major issue where the code uploaded successful
 
 **Repository:** [Link to Code Folder](./AutonomousArm_Control)
 
-The robot operates on a state-machine logic loop: `Scan` -> `Approach` -> `Grip` -> `Drop`.
+The robot operates on a state-machine logic loop: Scan -> Approach -> Grip -> Drop.
 
 ### Sensor Logic (Why ToF?)
-Initially, I implemented three **Ultrasonic Sensors (HC-SR04)**. However, testing revealed significant noise and interference between the sensors, leading to erratic position data.
+Initially, I implemented three Ultrasonic Sensors (HC-SR04). However, testing revealed significant noise and interference between the sensors, leading to erratic position data.
 
-* **Solution:** I switched to the **VL6180X Time-of-Flight (ToF)** sensor.
+* **Solution:** I switched to the VL6180X Time-of-Flight (ToF) sensor.
 * **Benefit:** ToF measures the time it takes for photons to bounce back, providing millimeter-level accuracy at close range (0-100mm) via I2C, which was far more stable for grabbing small objects.
 
 ### Code Highlight: Smooth Movement
-To prevent the robot from tipping over due to the inertia of the moving arm, I wrote a custom function `slowMove()` to ramp the servo speed rather than jumping instantly to a target angle.
+To prevent the robot from tipping over due to the inertia of the moving arm, I wrote a custom function slowMove() to ramp the servo speed rather than jumping instantly to a target angle.
 
 ```cpp
 // Helper function for smooth movement to prevent tipping
