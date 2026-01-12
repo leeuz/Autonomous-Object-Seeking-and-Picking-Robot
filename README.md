@@ -30,7 +30,7 @@ The [VL6180X ToF sensor](https://www.adafruit.com/product/3316) was selected ove
 
 
 **Force Sensitive Resistor (FSR)**
-A strip-shaped FSR was selected to act as the tactile feedback system for the gripper. By placing this on the inner jaw of the claw, the robot can detect physical pressure. This allows the code to stop the servo motor the moment a firm grip is achieved, preventing the robot from crushing delicate objects or burning out the servo motor by stalling against a hard object.
+A [strip-shaped FSR](https://www.amazon.com/dp/B0FWH5769C/ref=sspa_dk_detail_2?pd_rd_i=B0FWH5769C&pd_rd_w=GVBdo&content-id=amzn1.sym.7446a9d1-25fe-4460-b135-a60336bad2c9&pf_rd_p=7446a9d1-25fe-4460-b135-a60336bad2c9&pf_rd_r=11PCJZK8WDMKBEJ0EY96&pd_rd_wg=F2VP5&pd_rd_r=d1a0240e-51c2-4f05-8d1a-3cb113573069&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&th=1) was selected to act as the tactile feedback system for the gripper. By placing this on the inner jaw of the claw, the robot can detect physical pressure. This allows the code to stop the servo motor the moment a firm grip is achieved, preventing the robot from crushing delicate objects or burning out the servo motor by stalling against a hard object.
 <img 
   src="https://m.media-amazon.com/images/I/41PG4jWzTGL._SX342_SY445_QL70_FMwebp_.jpg"
   alt="Force Sensitive Resistor"
@@ -41,19 +41,19 @@ A strip-shaped FSR was selected to act as the tactile feedback system for the gr
 ### Actuator Selection
 
 **MG996R High Torque Servos**
-MG996R servos were selected for the Base, Shoulder, and Elbow joints. Based on my static torque calculations, the shoulder joint required approximately 3.16 kg-cm of torque to lift the arm assembly. The MG996R provides a stall torque of 9.4 kg-cm (at 4.8V), providing a safety factor of nearly 3. Metal gears were a requirement to prevent stripping under the load of the 3D-printed arm.
+[MG996R servos](https://www.amazon.com/MG996R-Copper-Digital-Helicopter-Control/dp/B0DK1V5ZSM/ref=sr_1_4_sspa?crid=1OAVB3969TGRI&dib=eyJ2IjoiMSJ9.41fcMl1uChaDHFtO02oNEyK6jELE6g6sFGoWL9JvyTmknPdXudJjW9s735w5bLw6ySkVvCKahtpSqqeM_-8e_qVYXQH5zH7qlMw8k7CB9nOf0FXlclCslQj3_G1FGu48riBznMqtNSOWpPpjEcxu9Yo4b4Ad5gWan5n0OkrOkoidXGkLcJ3iIR7vt3qKvSP6O1W0Lrjakni-9qevb9WIB7NzVLocnorUi4ES1_6qefh9Y3K6eC3dzw1PZH_g55pp1q6E92sRLtcbwpU5ejgZRYPCgFzYfZLCDMMyuLhK7JQ.MU4cD9Up1kjvD1qpsvUmGEwg6hJrdDDXaX9gFg7p_MA&dib_tag=se&keywords=MG9996R%2BHigh%2BTorque%2BServo&qid=1764656687&sprefix=mg9996r%2Bhigh%2Btorque%2Bservo%2Caps%2C234&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) were selected for the Base, Shoulder, and Elbow joints. Based on my static torque calculations, the shoulder joint required approximately 3.16 kg-cm of torque to lift the arm assembly. The MG996R provides a stall torque of 9.4 kg-cm (at 4.8V), providing a safety factor of nearly 3. Metal gears were a requirement to prevent stripping under the load of the 3D-printed arm.
 ![MG996R Servo](https://m.media-amazon.com/images/I/71PIDs0nXnL._AC_SX679_.jpg)
 
 
 **MG90S Micro Servo**
-The MG90S was selected specifically for the gripper mechanism. Since this motor sits at the very end of the arm, weight was a critical constraint. The MG90S is lightweight (13.4g) yet provides enough torque (1.8 kg-cm) to actuate the parallel gripper mechanism and hold small household objects.
+The [MG90S](https://www.amazon.com/Miuzei-Geared-Helicopter-Arduino-Project/dp/B0BWJ4RKGV/ref=sr_1_7?crid=16NT7G52X11A7&dib=eyJ2IjoiMSJ9.EdycfDxnDtcyy4IWKKo05MB-738x75AKe4V5UYnoE9SFdCyj7VM_EVwxr_VTDMLN5IBn6RdrNPR3Pu61ilWY6SDDolv8a_zmM2EAoqrYyeSBXd81svZiNfpnYZpZIx4EEAjQg62dt3rxl_40udX9sQ0GLTzXni9eq8Bi_-ZTGUGfGsF5rPdC8Uk1jEbq96LFR6pZGwMs4Zn52FwCvS6yPNzpsDCXFZ49INRxDcP4qAOZiEoFgQIHHdkf5IRALknJICex2DWP2WhPCLa-7LmZwS6EQpBFOva_o3IQEJfJnjQ.Xbtd5Qq35COKmdoskLIfntw2r4xDG2G9kf1ag1sLpf8&dib_tag=se&keywords=MG90S%2BMicro%2BServo&qid=1764656814&sprefix=mg90s%2Bmicro%2Bservo%2Caps%2C294&sr=8-7&th=1) was selected specifically for the gripper mechanism. Since this motor sits at the very end of the arm, weight was a critical constraint. The MG90S is lightweight (13.4g) yet provides enough torque (1.8 kg-cm) to actuate the parallel gripper mechanism and hold small household objects.
 ![MG90S Servo](https://m.media-amazon.com/images/I/812KFZH-2-L._SX522_.jpg)
 
 
 ### Microcontroller Selection
 
 **Arduino Nano**
-The Arduino Nano was chosen as the central controller due to its compact form factor, which fits easily inside the custom-designed 3D-printed base. It features dedicated I2C pins (A4/A5) required for the ToF sensor and sufficient PWM digital pins to control all four servos simultaneously.
+The [Arduino Nano](https://www.amazon.com/Arduino-Nano-Every-headers-Mounted/dp/B07WWK29XF/ref=sr_1_10?crid=1KNU3Q0JVQYDE&dib=eyJ2IjoiMSJ9.87rL5d9ziJpvx7A3OM0CuxgWB1jyYqARwwE-oC7y63jsbfmdUA0gu9nCIAyUTTjHcRp6v5uxx6JmC05x2NFnA8qGEte8cUXpIl93Fui-YUeZy7O13wyDet_FTt3ixINtOhlW-S8GC2kpU43Tj2udJ4iWqHK9l4ohSKeNZeuTF9r7-AAkaYRSpnoqVVFFZYp4lUXF9Gyj_Ty8z0jjezNdhbdt_0v9VwuVSNIQw2bOjkc.z21cytSSYDATL1CkSTk-I1Qz1Ttl-T8nf0v8AvSE8V4&dib_tag=se&keywords=arduino+nano&qid=1768211766&sprefix=arduino+nan%2Caps%2C178&sr=8-10) was chosen as the central controller due to its compact form factor, which fits easily inside the custom-designed 3D-printed base. It features dedicated I2C pins (A4/A5) required for the ToF sensor and sufficient PWM digital pins to control all four servos simultaneously.
 ![Arduino Nano](https://m.media-amazon.com/images/I/61yomoOzTpL._AC_SX300_SY300_QL70_FMwebp_.jpg)
 
 
