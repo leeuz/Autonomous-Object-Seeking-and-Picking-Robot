@@ -35,8 +35,9 @@ A strip-shaped FSR was selected to act as the tactile feedback system for the gr
 ### Actuator Selection
 
 **MG996R High Torque Servos**
-![MG996R Servo](https://m.media-amazon.com/images/I/71PIDs0nXnL._AC_SX679_.jpg)
 MG996R servos were selected for the Base, Shoulder, and Elbow joints. Based on my static torque calculations, the shoulder joint required approximately 3.16 kg-cm of torque to lift the arm assembly. The MG996R provides a stall torque of 9.4 kg-cm (at 4.8V), providing a safety factor of nearly 3. Metal gears were a requirement to prevent stripping under the load of the 3D-printed arm.
+
+![MG996R Servo](https://m.media-amazon.com/images/I/71PIDs0nXnL._AC_SX679_.jpg)
 
 **MG90S Micro Servo**
 ![MG90S Servo](PLACE_IMAGE_OF_MG90S_HERE.jpg)
