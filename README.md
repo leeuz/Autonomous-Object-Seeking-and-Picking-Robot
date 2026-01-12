@@ -4,7 +4,7 @@
 **Class:** Engineering Design and Development (EDD)  
 **Status:** Prototype Complete (Phase 1)
 
-https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/issues/1#issue-3803670657
+https://github.com/user-attachments/assets/51278465-b8da-4105-9415-ab0f98c090c7
 
 ## Project Overview
 
