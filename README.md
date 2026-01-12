@@ -59,13 +59,13 @@ The base required a custom housing to stabilize the heavy MG996R servo while acc
 * **Design Choice:** I included a specific channel (15mm x 10mm) for the USB cable to allow for programming updates without disassembling the robot.
 * **Iterative Design:** The base size was defined as a variable in Fusion 360, allowing me to resize the housing easily when I realized the perfboard and wiring required more volume than initially calculated.
 
-![Fusion 360 Base Design](PLACE_SCREENSHOT_OF_BASE_CAD_HERE.png)
+![Fusion 360 Base Design](https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/blob/main/Base_CAD_Design.png)
 
 ### 2. The Gripper
 I adapted an open-source parallel gripper design to fit the MG90S servo.
 * **Modification:** I modified the jaw surface to house a Force Sensitive Resistor (FSR). This allows the robot to "feel" when it has successfully gripped an object, preventing the motor from crushing delicate items or burning out.
 
-![Fusion 360 Gripper Render](PLACE_SCREENSHOT_OF_GRIPPER_CAD_HERE.png)
+![Fusion 360 Gripper Render](https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/blob/main/Gripper_CAD_Design.png)
 
 ---
 
