@@ -115,3 +115,7 @@ void slowMove(Servo &s, int start, int end) {
     }
   }
 }
+
+---
+
+## **Testing & Validation**
