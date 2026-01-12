@@ -119,7 +119,7 @@ During the build, I encountered a major issue where the code uploaded successful
 
 **Repository:** [Link to Code Folder](./AutonomousArm_Control)
 
-**System Logic Flowchart**
+**System Logic Flowchart**<br>
 ![Logic Flowchart](https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/blob/main/Logic_Flowchart.png)
 
 ### Sensor Logic (Why ToF?)
