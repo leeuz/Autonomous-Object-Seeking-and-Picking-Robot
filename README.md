@@ -1,10 +1,9 @@
 # Autonomous Object-Seeking and Picking Robot Arm
 
 **Name:** Yuji Lee  
-**Class:** Engineering Design and Development (EDD)  
-**Status:** Prototype Complete (Phase 1)
+**Status:** Arm Prototype Complete (Phase 1)
 
-https://github.com/user-attachments/assets/51278465-b8da-4105-9415-ab0f98c090c7
+![Robot Arm Demo](Arm_Prototype_Demo.gif)
 
 ## Project Overview
 
@@ -54,6 +53,7 @@ The MG90S was selected specifically for the gripper mechanism. Since this motor 
 
 **[Arduino Nano](https://www.amazon.com/Arduino-Nano-Every-headers-Mounted/dp/B07WWK29XF/ref=sr_1_10?crid=1KNU3Q0JVQYDE&dib=eyJ2IjoiMSJ9.87rL5d9ziJpvx7A3OM0CuxgWB1jyYqARwwE-oC7y63jsbfmdUA0gu9nCIAyUTTjHcRp6v5uxx6JmC05x2NFnA8qGEte8cUXpIl93Fui-YUeZy7O13wyDet_FTt3ixINtOhlW-S8GC2kpU43Tj2udJ4iWqHK9l4ohSKeNZeuTF9r7-AAkaYRSpnoqVVFFZYp4lUXF9Gyj_Ty8z0jjezNdhbdt_0v9VwuVSNIQw2bOjkc.z21cytSSYDATL1CkSTk-I1Qz1Ttl-T8nf0v8AvSE8V4&dib_tag=se&keywords=arduino+nano&qid=1768211766&sprefix=arduino+nan%2Caps%2C178&sr=8-10)**
 The Arduino Nano was chosen as the central controller due to its compact form factor, which fits easily inside the custom-designed 3D-printed base. It features dedicated I2C pins (A4/A5) required for the ToF sensor and sufficient PWM digital pins to control all four servos simultaneously.
+
 <img 
   src="https://m.media-amazon.com/images/I/61yomoOzTpL._AC_SX300_SY300_QL70_FMwebp_.jpg"
   alt="Arduino Nano"
@@ -192,7 +192,7 @@ I performed a static test to verify the accuracy of the ToF sensor before integr
 ## Credits & Resources
 
 * **Libraries:** Adafruit_VL6180X, Servo.h
-* **3D Models:** MG996R Servo model from GrabCAD
+* **3D Models:** [MG996R Servo model from GrabCAD](https://grabcad.com/library/mechanical-gripper-14)
 
 ---
 
