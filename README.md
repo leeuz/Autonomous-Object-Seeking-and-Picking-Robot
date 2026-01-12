@@ -1,10 +1,9 @@
 # Autonomous Object-Seeking and Picking Robot Arm
 
 **Name:** Yuji Lee  
-**Class:** Engineering Design and Development (EDD)  
 **Status:** Prototype Complete (Phase 1)
 
-https://github.com/user-attachments/assets/51278465-b8da-4105-9415-ab0f98c090c7
+![Robot Arm Demo](arm_prototype_demo.gif)
 
 ## Project Overview
 
