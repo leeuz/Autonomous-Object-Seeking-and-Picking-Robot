@@ -25,29 +25,32 @@ Students, home users, and workplaces often have small objects scattered on floor
 ### Sensor Selection
 
 **Adafruit VL6180X Time-of-Flight (ToF)**
-![Adafruit VL6180X Sensor](PLACE_IMAGE_OF_TOF_SENSOR_HERE.jpg)
-The VL6180X was selected over ultrasonic sensors (HC-SR04) because of its high precision at short ranges (0-100mm). Unlike ultrasonic sensors, which created significant noise and interference during testing, the ToF sensor uses laser technology to provide millimeter-level accuracy via I2C communication. This is critical for the "Approach" phase where the gripper must position itself perfectly around a small object.
+The [VL6180X ToF sensor](https://www.adafruit.com/product/3316) was selected over ultrasonic sensors (HC-SR04) because of its high precision at short ranges (0-100mm). Unlike ultrasonic sensors, which created significant noise and interference during testing, the ToF sensor uses laser technology to provide millimeter-level accuracy via I2C communication. This is critical for the "Approach" phase where the gripper must position itself perfectly around a small object.![Adafruit VL6180X Sensor](https://cdn-shop.adafruit.com/970x728/3316-10.jpg)
+
 
 **Force Sensitive Resistor (FSR)**
-![Force Sensitive Resistor](PLACE_IMAGE_OF_FSR_HERE.jpg)
 A strip-shaped FSR was selected to act as the tactile feedback system for the gripper. By placing this on the inner jaw of the claw, the robot can detect physical pressure. This allows the code to stop the servo motor the moment a firm grip is achieved, preventing the robot from crushing delicate objects or burning out the servo motor by stalling against a hard object.
+![Force Sensitive Resistor](https://m.media-amazon.com/images/I/41PG4jWzTGL._SX342_SY445_QL70_FMwebp_.jpg)
+
 
 ### Actuator Selection
 
 **MG996R High Torque Servos**
 MG996R servos were selected for the Base, Shoulder, and Elbow joints. Based on my static torque calculations, the shoulder joint required approximately 3.16 kg-cm of torque to lift the arm assembly. The MG996R provides a stall torque of 9.4 kg-cm (at 4.8V), providing a safety factor of nearly 3. Metal gears were a requirement to prevent stripping under the load of the 3D-printed arm.
-
 ![MG996R Servo](https://m.media-amazon.com/images/I/71PIDs0nXnL._AC_SX679_.jpg)
 
+
 **MG90S Micro Servo**
-![MG90S Servo](PLACE_IMAGE_OF_MG90S_HERE.jpg)
 The MG90S was selected specifically for the gripper mechanism. Since this motor sits at the very end of the arm, weight was a critical constraint. The MG90S is lightweight (13.4g) yet provides enough torque (1.8 kg-cm) to actuate the parallel gripper mechanism and hold small household objects.
+![MG90S Servo](https://m.media-amazon.com/images/I/812KFZH-2-L._SX522_.jpg)
+
 
 ### Microcontroller Selection
 
 **Arduino Nano**
-![Arduino Nano](PLACE_IMAGE_OF_ARDUINO_NANO_HERE.jpg)
 The Arduino Nano was chosen as the central controller due to its compact form factor, which fits easily inside the custom-designed 3D-printed base. It features dedicated I2C pins (A4/A5) required for the ToF sensor and sufficient PWM digital pins to control all four servos simultaneously.
+![Arduino Nano](https://m.media-amazon.com/images/I/61yomoOzTpL._AC_SX300_SY300_QL70_FMwebp_.jpg)
+
 
 ---
 
