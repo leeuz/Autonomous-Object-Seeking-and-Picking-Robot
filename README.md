@@ -46,7 +46,7 @@ Before manufacturing, I performed static torque calculations to ensure the MG996
     * Servo Capacity: 9.4 kg-cm.
     * **Safety Factor:** ~2.97 (Safe).
 
-![Torque Calculation Notes](PLACE_IMAGE_OF_YOUR_CALCULATION_NOTES_HERE.jpg)
+[Detailed Torque Calculation Notes (12/4 & 5)](https://docs.google.com/document/d/14iYlZt8_KT-G-6Bip5Sd_sYR2SBkpgpfMPnpm2VzzZg/edit?usp=sharing)
 
 ---
 
