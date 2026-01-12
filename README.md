@@ -120,3 +120,23 @@ void slowMove(Servo &s, int start, int end) {
 ---
 
 ## **Testing & Validation**
+
+### Sensor Calibration Table (VL6180X)
+I performed a static test to verify the accuracy of the ToF sensor before integrating it into the arm. 
+
+| Real Distance (mm) | Sensor Reading (mm) | Error (%) |
+| :--- | :--- | :--- |
+| 20 | 20 | 0% |
+| 50 | 52 | 4% |
+| 100 | 102 | 2% |
+| 100 | 102 | 2% |
+| 200 | 188.5 | 5.75% |
+
+* **Observation:** The sensor is highly accurate up to 100mm. Beyond 200mm, it returns "Range Error 11".
+* **Action:** I programmed the logic to only initiate a "Grab" sequence if the distance is less than 100mm.
+
+### Power Supply Verification
+* **Attempt 1:** 4.5V (????)
+   * **Result:** Failure. Servos stalled under load.
+* **Attempt 2:** 6.0V (???)
+   * **Results:** Success. The MG996R and MG90S Micro servos require a minimum of 4.8V to operate efficiently.
