@@ -59,7 +59,7 @@ The base required a custom housing to stabilize the heavy MG996R servo while acc
 * **Design Choice:** I included a specific channel (15mm x 10mm) for the USB cable to allow for programming updates without disassembling the robot.
 * **Iterative Design:** The base size was defined as a variable in Fusion 360, allowing me to resize the housing easily when I realized the perfboard and wiring required more volume than initially calculated.
 
-![Fusion 360 Base Design](images/base_cad_design.png)
+![Fusion 360 Base Design]([images/base_cad_design.png](https://drive.google.com/file/d/1G4DKRe_gKsOB3oLJV0ufb-lCq1JJhJDw/view?usp=sharing))
 
 ### 2. The Gripper
 I adapted an open-source parallel gripper design to fit the MG90S servo.
