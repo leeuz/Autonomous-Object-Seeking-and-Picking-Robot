@@ -117,6 +117,24 @@ During the build, I encountered a major issue where the code uploaded successful
 
 ## Software & Logic
 
+**Code Block Diagram:**
+graph TD
+    Start([Start Loop]) --> Scan[Scan Phase: Rotate Base]
+    Scan --> Check{Object < 100mm?}
+    Check -- No --> Scan
+    Check -- Yes --> Approach[Approach Phase: Move Arm]
+    
+    Approach --> Grip[Grip Phase: Close Claw]
+    Grip --> FSR{FSR Pressure?}
+    
+    FSR -- No (Missed) --> Reset[Reset to Idle]
+    FSR -- Yes (Grabbed) --> Lift[Lift Object]
+    
+    Lift --> Rotate[Rotate to Drop Zone]
+    Rotate --> Drop[Open Gripper]
+    Drop --> Reset
+    Reset --> Start
+
 **Repository:** [Link to Code Folder](./AutonomousArm_Control)
 
 The robot operates on a state-machine logic loop: Scan -> Approach -> Grip -> Drop.
