@@ -1,7 +1,7 @@
 # Autonomous Object-Seeking and Picking Robot Arm
 
 **Name:** Yuji Lee  
-**Status:** Prototype Complete (Phase 1)
+**Status:** Arm Prototype Complete (Phase 1)
 
 ![Robot Arm Demo](Arm_Prototype_Demo.gif)
 
