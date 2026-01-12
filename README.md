@@ -119,7 +119,8 @@ During the build, I encountered a major issue where the code uploaded successful
 
 **Repository:** [Link to Code Folder](./AutonomousArm_Control)
 
-The robot operates on a state-machine logic loop: Scan -> Approach -> Grip -> Drop.
+**System Logic Flowchart**
+![Logic Flowchart](https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/blob/main/Logic_Flowchart.pdf)
 
 ### Sensor Logic (Why ToF?)
 Initially, I implemented three Ultrasonic Sensors (HC-SR04). However, testing revealed significant noise and interference between the sensors, leading to erratic position data.
