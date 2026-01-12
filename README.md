@@ -74,7 +74,7 @@ I adapted an open-source parallel gripper design to fit the MG90S servo.
 ### Wiring Diagram
 The system uses a mixed-voltage circuit. The logic level (Arduino) runs on 5V USB, while the inductive load (Servos) runs on an external 6V source.
 
-![Final Wiring Diagram](PLACE_IMAGE_OF_WIRING_DIAGRAM_HERE.png)
+![Wiring Diagram](https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/blob/main/WiringDiagram.png)
 
 ### Critical Challenge: The Common Ground
 During the build, I encountered a major issue where the code uploaded successfully, but the servos refused to move.
