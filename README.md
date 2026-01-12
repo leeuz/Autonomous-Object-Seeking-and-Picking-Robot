@@ -65,7 +65,7 @@ The base required a custom housing to stabilize the heavy MG996R servo while acc
 I adapted an open-source parallel gripper design to fit the MG90S servo.
 * **Modification:** I modified the jaw surface to house a Force Sensitive Resistor (FSR). This allows the robot to "feel" when it has successfully gripped an object, preventing the motor from crushing delicate items or burning out.
 
-![Fusion 360 Gripper Render](PLACE_SCREENSHOT_OF_GRIPPER_CAD_HERE.png)
+![Fusion 360 Gripper Render](https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/blob/main/Gripper_CAD_Design.png)
 
 ---
 
