@@ -20,17 +20,37 @@ Students, home users, and workplaces often have small objects scattered on floor
 
 ---
 
-## Technical Specifications & Part Selection
+## Part Selection
 
-### Bill of Materials (BOM)
+### Sensor Selection
 
-| Component | Model | Function |
-| :--- | :--- | :--- |
-| **Microcontroller** | Arduino Nano | Central processing unit for sensor logic and servo control. |
-| **Primary Actuators** | MG996R High Torque Servo (x3) | Controls Base, Shoulder, and Elbow joints. |
-| **Gripper Actuator** | MG90S Micro Servo | Actuates the claw mechanism. |
-| **Object Sensor** | Adafruit VL6180X (ToF) | High-precision distance measurement for object detection. |
-| **Contact Sensor** | Force Sensitive Resistor (FSR) | Feedback loop to confirm object has been grabbed. |
+**Adafruit VL6180X Time-of-Flight (ToF)**
+![Adafruit VL6180X Sensor](PLACE_IMAGE_OF_TOF_SENSOR_HERE.jpg)
+The VL6180X was selected over ultrasonic sensors (HC-SR04) because of its high precision at short ranges (0-100mm). Unlike ultrasonic sensors, which created significant noise and interference during testing, the ToF sensor uses laser technology to provide millimeter-level accuracy via I2C communication. This is critical for the "Approach" phase where the gripper must position itself perfectly around a small object.
+
+**Force Sensitive Resistor (FSR)**
+![Force Sensitive Resistor](PLACE_IMAGE_OF_FSR_HERE.jpg)
+A strip-shaped FSR was selected to act as the tactile feedback system for the gripper. By placing this on the inner jaw of the claw, the robot can detect physical pressure. This allows the code to stop the servo motor the moment a firm grip is achieved, preventing the robot from crushing delicate objects or burning out the servo motor by stalling against a hard object.
+
+### Actuator Selection
+
+**MG996R High Torque Servos**
+![MG996R Servo](https://m.media-amazon.com/images/I/71PIDs0nXnL._AC_SX679_.jpg)
+MG996R servos were selected for the Base, Shoulder, and Elbow joints. Based on my static torque calculations, the shoulder joint required approximately 3.16 kg-cm of torque to lift the arm assembly. The MG996R provides a stall torque of 9.4 kg-cm (at 4.8V), providing a safety factor of nearly 3. Metal gears were a requirement to prevent stripping under the load of the 3D-printed arm.
+
+**MG90S Micro Servo**
+![MG90S Servo](PLACE_IMAGE_OF_MG90S_HERE.jpg)
+The MG90S was selected specifically for the gripper mechanism. Since this motor sits at the very end of the arm, weight was a critical constraint. The MG90S is lightweight (13.4g) yet provides enough torque (1.8 kg-cm) to actuate the parallel gripper mechanism and hold small household objects.
+
+### Microcontroller Selection
+
+**Arduino Nano**
+![Arduino Nano](PLACE_IMAGE_OF_ARDUINO_NANO_HERE.jpg)
+The Arduino Nano was chosen as the central controller due to its compact form factor, which fits easily inside the custom-designed 3D-printed base. It features dedicated I2C pins (A4/A5) required for the ToF sensor and sufficient PWM digital pins to control all four servos simultaneously.
+
+---
+
+## Technical Specifications
 
 ### Torque Calculations & Physics
 Before manufacturing, I performed static torque calculations to ensure the MG996R servos (Stall Torque: ~9.4 kg-cm) could lift the arm assembly.
@@ -135,16 +155,10 @@ I performed a static test to verify the accuracy of the ToF sensor before integr
 * **Action:** I programmed the logic to only initiate a "Grab" sequence if the distance is less than 100mm.
 
 ### Power Supply Verification
-* **Attempt 1:** 4.5V (????)
+* **Attempt 1:** 4.5V (DC Regulated Power Supply)
    * **Result:** Failure. Servos stalled under load.
-* **Attempt 2:** 6.0V (???)
+* **Attempt 2:** 6.0V (DC Regulated Power Supply)
    * **Results:** Success. The MG996R and MG90S Micro servos require a minimum of 4.8V to operate efficiently.
-
----
-
-## Media
-
-### Project Demo Video:
 
 ---
 
@@ -166,3 +180,11 @@ I performed a static test to verify the accuracy of the ToF sensor before integr
 
 * **Libraries:** Adafruit_VL6180X, Servo.h
 * **3D Models:** MG996R Servo model from GrabCAD
+
+---
+
+## Skills Demonstrated
+* **Embedded Systesm Programming:** Applied C++ knowledge to program an Arduino Nano, utilizing state-machine logic to coordinate multiple sensors (I2C and Analog) with actuator outputs.
+* **Circuit Analysis & Soldering:** Diagnosed and resolved mixed-voltage circuit isolation issues (Common Ground) and successfully soldered voltage divider circuits for FSR integration using flux.
+* **Physics & Static Analysis:** Calculated moment arms and torque requirements to select appropriate motors, ensuring a Safety Factor > 2.
+* **Computer-Aided Design (CAD):** Demonstrated proficiency in Autodesk Fusion 360 by designing a custom servo housing with interference fits and modifying existing gripper geometries to integrate sensors.
