@@ -4,6 +4,7 @@
 **Status:** Arm Prototype Complete (Phase 1)
 
 ![Robot Arm Demo](Arm_Prototype_Demo.gif)
+(this will be updated with gripper)
 
 ## Project Overview
 
