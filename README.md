@@ -140,3 +140,30 @@ I performed a static test to verify the accuracy of the ToF sensor before integr
    * **Result:** Failure. Servos stalled under load.
 * **Attempt 2:** 6.0V (???)
    * **Results:** Success. The MG996R and MG90S Micro servos require a minimum of 4.8V to operate efficiently.
+
+---
+
+## Media
+
+### Project Demo Video:
+
+---
+
+## Reflections & Future Improvements
+
+### What Went Well
+* **Torque Calculations:** The math held up; the arm moves smoothly without stalling.
+* **FSR Integration:** The gripper successfully detects when an object is held, allowing for autonomous stopping.
+* **Troubleshooting:** Successfully diagnosed the mixed-voltage common ground issue.
+
+### Improvements for V2
+1. **Mobile Chassis:** The original plan included a wheeled base. Due to time constraints, I focused on the arm. The next step is mounting this arm to a mobile robot vacuum chassis.
+2. **Vision Processing:** The ToF sensor is excellent for distance but blind to what the object is. I would implement a camera (e.g., OpenMV) to distinguish between trash and valuables.
+3. **PID Control:** Implementing PID logic would make the arm movement even smoother and faster than the current linear ramping function.
+
+---
+
+## Credits & Resources
+
+* **Libraries:** Adafruit_VL6180X, Servo.h
+* 3D Models: MG996R Servo model from GrabCAD
