@@ -4,6 +4,7 @@
 **Status:** Arm Prototype Complete (Phase 1)
 
 [![Arm Prototype Demo Video](https://img.youtube.com/vi/hXdMy5HRmKQ/0.jpg)](https://youtu.be/hXdMy5HRmKQ)
+click to see the video!
 
 ## Project Overview
 
