@@ -6,7 +6,8 @@
 <a href="https://youtu.be/hXdMy5HRmKQ">
   <img src="https://img.youtube.com/vi/hXdMy5HRmKQ/0.jpg" alt="Arm Prototype Demo Video" width="600">
 </a>
-click to see the video!
+click to see the video!<br>
+[gif demo](https://github.com/leeuz/Autonomous-Object-Seeking-and-Picking-Robot/blob/main/Arm_Prototype_Demo.gif)
 
 ## Project Overview
 
