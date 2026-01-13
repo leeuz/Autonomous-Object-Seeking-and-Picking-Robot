@@ -3,7 +3,7 @@
 **Name:** Yuji Lee  
 **Status:** Arm Prototype Complete (Phase 1)
 
-[![Arm Prototype Demo Video](assets/thumbnail.png)](https://youtu.be/hXdMy5HRmKQ)
+[![Arm Prototype Demo Video](https://img.youtube.com/vi/hXdMy5HRmKQ/0.jpg)](https://youtu.be/hXdMy5HRmKQ)
 
 ## Project Overview
 
