@@ -3,8 +3,7 @@
 **Name:** Yuji Lee  
 **Status:** Arm Prototype Complete (Phase 1)
 
-![Robot Arm Demo](Arm_Prototype_Demo.gif)
-(this will be updated with gripper)
+[![Arm Prototype Demo Video](assets/thumbnail.png)](https://youtu.be/hXdMy5HRmKQ)
 
 ## Project Overview
 
